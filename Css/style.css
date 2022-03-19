@@ -1,0 +1,368 @@
+@font-face {
+    font-family: IRANYekanBold;
+    src: url("../Font/IRANYekanBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: IRANYekanExtraBlackMsn;
+    src: url("../Font/IRANYekanExtraBlackMsn.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: IRANYekanLight;
+    src: url("../Font/IRANYekanLight.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/5559852.jpg") no-repeat center;
+    background-size: cover;
+    overflow: hidden;
+}
+div.all-box-exam {
+    width: 400px;
+    height: 250px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.close {
+    display: none;
+    transition: all linear 0.4s;
+}
+
+div.header {
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #cecece;
+    padding-left: 20px;
+    line-height: 41px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    font-family: IRANYekanBold, sans-serif;
+}
+
+ul.bos-item {
+    width: 100%;
+    height: 160px;
+    padding: 15px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #cecece;
+}
+
+li {
+    list-style: none;
+    width: 100%;
+    height: 26px;
+    padding-left: 20px;
+    line-height: 32px;
+    font-size: 0.8rem;
+    box-sizing: border-box;
+    font-family: IRANYekanBold, sans-serif;
+    color: #a1a1a1;
+}
+
+ul.bos-item li span {
+    color: #3c3cff;
+    font-family: IRANYekanBold, sans-serif;
+}
+
+div.button-quiz {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: end;
+    font-family: IRANYekanBold, sans-serif;
+}
+
+button.continue {
+    width: 80px;
+    height: 28px;
+    border: none;
+    margin: 12px 20px 0 5px;
+    border-radius: 4px;
+    background-color: #6060f8;
+    color: white;
+    line-height: 27px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+button.continue:hover {
+    background-color: rgba(96, 96, 248, 0.82);
+}
+
+div.box-exam {
+    position: absolute;
+    overflow: hidden;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 5px;
+    font-family: IRANYekanBold, sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
+    transition: opacity 600ms, visibility 600ms;
+}
+
+.open {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+div.titre-header {
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    line-height: 51px;
+    font-size: 0.9rem;
+}
+
+div.box-timer {
+    width: 100%;
+    height: 2px;
+}
+
+div.box-timer > div.timer {
+    width: 0;
+    height: 2px;
+    background-color: #6060f8;
+}
+
+div.box-timer > div.timer-ani {
+    animation: time15 15s linear;
+}
+
+@keyframes time15 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+div.exam-answer {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+div.exam-answer > div.allAsk > div.ask {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    margin-top: 5px;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+}
+
+div.exam-answer > div.box-option {
+    width: 100%;
+    height: 250px;
+}
+
+div.exam-answer > div.box-option > div.option {
+    width: 90%;
+    margin: 5px auto 15px auto;
+    height: 35px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    border: 1px solid #6060f8;
+    line-height: 34px;
+    background-color: rgba(96, 96, 248, 0.18);
+    font-family: IRANYekanLight, sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s linear;
+}
+
+div.exam-answer > div.box-option > div.option:hover {
+    background-color: rgba(96, 96, 248, 0.5);
+}
+
+div.exam-answer > div.box-option > div.option > span {
+    display: block;
+    width: 100%;
+    height: 35px;
+}
+
+div.exam-answer > div.box-option > div.option > i.icon {
+    width: 25px;
+    height: 25px;
+    background-color: #3c3cff;
+    position: absolute;
+    right: 5px;
+    top: 4px;
+    display: none;
+}
+/*ture and false*/
+div.exam-answer > div.box-option > div.ture-b {
+    background-color: rgba(84, 227, 96, 0.45);
+    border: 1px solid rgba(38, 140, 46, 0.76);
+    pointer-events: none;
+}
+
+div.exam-answer > div.box-option > div.ture-b > i.icon {
+    background: url("../img/accept.png") no-repeat center;
+    display: block;
+}
+
+div.exam-answer > div.box-option > div.false-b {
+    background-color: rgba(227, 84, 134, 0.32);
+    border: 1px solid rgba(140, 38, 77, 0.76);
+}
+
+div.exam-answer > div.box-option > div.false-b > i.icon {
+    background: url("../img/decline.png") no-repeat center;
+    display: block;
+}
+/*end ture and false*/
+
+
+div.next-number {
+    width: 100%;
+    height: 48px;
+    border-top: 2px solid rgba(201, 201, 201, 0.58);
+    box-sizing: border-box;
+    line-height: 48px;
+    padding-left: 23px;
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.71);
+}
+
+div.numberexam {
+    width: 70%;
+    height: 48px;
+    display: inline-block;
+}
+
+div.next-number > div.next-que {
+    width: 25%;
+    height: 35px;
+    background-color: #0061D4;
+    display: none;
+    border-radius: 6px;
+    color: white;
+    border: 1px solid #3c3cff;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+div.next-number > div.show {
+    display: inline-block;
+}
+
+div.next-number > div.show:hover {
+    background-color: rgba(0, 0, 255, 0.11);
+    color: #3c3cff;
+    transition: all 0.2s linear;
+}
+
+div.box-number-quiz {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    z-index: 20;
+    text-align: center;
+    font-family: IRANYekanBold, sans-serif;
+    display: none;
+}
+
+div.logo {
+    width: 100%;
+    height: 150px;
+    background: url("../img/results.png") no-repeat center;
+    margin: 25px 0 40px 0;
+    animation: logo linear 1.3s infinite;
+}
+@keyframes logo {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.04);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+span.text {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    color: rgba(0, 0, 0, 0.68);
+}
+
+p.bad {
+    font-size: 0.9rem;
+    margin-top: 20px;
+    color: rgba(255, 0, 0, 0.73);
+}
+
+p.nice {
+    font-size: 0.9rem;
+    margin-top: 20px;
+    color: rgba(0, 138, 0, 0.89);
+}
+
+div.media{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 130px;
+    position: absolute;
+    bottom: 40px;
+    left: 138px;
+}
+div.media > img {
+    cursor: pointer;
+    transition: all linear 0.4s;
+}
+div.media > img:hover{
+    transform: scale(1.2);
+    transition: all linear 0.4s;
+}
+span.creat{
+    position: absolute;
+    bottom: 8px;
+    width: 95%;
+    display: block;
+    font-size: 0.7rem;
+}
+
+span.color{
+    color: #3c3cff;
+}
+
+
+
+
+
+
+
+
+
+
